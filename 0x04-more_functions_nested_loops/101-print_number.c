@@ -2,26 +2,22 @@
 #include "main.h"
 
 /**
- * print_number - prints int with putchar
- * @n: takes number, hello
- *
- * Return: void
+ * print_number - Prints a number
+ * @n: The number to print
  */
 
 void print_number(int n)
 {
-	unsigned int m;
+	unsigned int num = n;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		m + -n;
+		putchar('-');
+		num = -num;
 	}
-	else
+	if (num > 9)
 	{
-		m + n;
+		print_number(num / 10);
 	}
-	if (m / 10 != 0)
-		print_number(m / 10);
-	_putchar((m % 10) + '0');
+	putchar(num % 10 + '0');
 }
