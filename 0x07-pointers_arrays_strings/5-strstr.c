@@ -33,8 +33,8 @@ char *_strstr(char *haystack, char *needle)
 					 return (haystack);
 
 				 index++;
-
-				 } while (haystack[index] == needle[index]);
+			 }
+			 while (haystack[index] == needle[index]);
 		 }
 
 		 haystack++;
