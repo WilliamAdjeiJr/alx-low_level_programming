@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# create libdynamic.so from all functions listed in 0-main.h
+gcc -Wall -fPIC -c *.c
+gcc -shared -o libdynamic.so *.o
