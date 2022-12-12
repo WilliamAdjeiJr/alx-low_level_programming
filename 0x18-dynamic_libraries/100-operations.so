@@ -1,0 +1,41 @@
+// 100-operations.c
+#include <stdio.h>
+
+int add(int a, int b)
+{
+  return a + b;
+}
+
+int sub(int a, int b)
+{
+  return a - b;
+}
+
+int mul(int a, int b)
+{
+  return a * b;
+}
+
+int div(int a, int b)
+{
+  return a / b;
+}
+
+int mod(int a, int b)
+{
+  return a % b;
+}
+
+// 100-tests.py
+import random
+import ctypes
+
+cops = ctypes.CDLL('./100-operations.so')
+a = random.randint(-111, 111)
+b = random.randint(-111, 111)
+print("{} + {} = {}".format(a, b, cops.add(a, b)))
+print("{} - {} = {}".format(a, b, cops.sub(a, b)))
+print("{} x {} = {}".format(a, b, cops.mul(a, b)))
+print("{} / {} = {}".format(a, b, cops.div(a, b)))
+print("{} % {} = {}".format(a, b, cops.mod(a, b)))
+
